@@ -18,7 +18,8 @@ void	*trabajador(void *arg)
 }
 */
 
-void* trabajador(void* arg) {
+void* trabajador(void* arg) // Con el printf fuera del mutex
+{ 
 	int id = *(int*)arg;
 	printf("Hilo %d: esperando acceso...\n", id);
 
