@@ -13,6 +13,8 @@
 
 #include <limits.h>
 #include "../header/philo.h"
+#include "../header/initialization.h"
+#include "../header/utils.h"
 
 
 //1. number_of_philosophers and forks
@@ -46,8 +48,11 @@ int main(int argc, char *argv)
 {
 	t_philo philos[PHILO_MAX_COUNT];
 	t_mutex forks[PHILO_MAX_COUNT];
-	t_simulation table;
+	t_simulation sim;
 
 	ft_args_check(argc, argv);
+	ft_init_simulation(&sim, philos, forks);
+	ft_init_forks(&sim, ft_atoi(argv[1])); //falta atoi
+	
 	
 }
