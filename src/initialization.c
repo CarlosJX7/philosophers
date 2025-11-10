@@ -39,7 +39,10 @@ void ft_init_philosophers(t_simulation *table, t_philo *philos, t_mutex *forks, 
 		philos[i].mutexes.left_fork = &forks[i]; //left fork es un puntero al mutex del tenedor izquierdo
 		if (i == 0)
 			philos[i].mutexes.right_fork = &forks[philos[i].total_philosophers - 1];
-		//asignacion del ultimo tenedor entre el primer y ultimo filosofo
+		else
+			philos[i].mutexes.right_fork = &forks[i - 1];
+		philos[i].mutexes.write_lock = &table->write_lock;
+		
 		//checkpoint
 		i++;
 	}
