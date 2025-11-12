@@ -13,6 +13,8 @@
 #ifndef UTILS_H
 # define UTILS_H
 
+#include "../header/philo.h"
+
 int ft_atoi(char *str);
 
 #endif

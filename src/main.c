@@ -52,7 +52,8 @@ int main(int argc, char *argv)
 
 	ft_args_check(argc, argv);
 	ft_init_simulation(&sim, philos, forks);
-	ft_init_forks(&sim, ft_atoi(argv[1])); //falta atoi
+	ft_init_forks(&sim, ft_atoi(argv[1]));
+	ft_init_philosophers(&sim, philos, forks, argv);
 	
 	
 }

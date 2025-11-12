@@ -66,9 +66,3 @@ void ft_init_philosophers(t_simulation *sim, t_philo *philos, t_mutex *forks, ch
 		i++;
 	}
 }
-
-
-void ft_init_engine()
-{
-
-}
