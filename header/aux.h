@@ -14,6 +14,8 @@
 # define AXUX_H
 
 #include "../header/philo.h"
+#include <sys/time.h>
+
 void ft_print_error(char *message, int exit_code);
 void ft_destroy_mutexes(t_simulation *sim, char *message, int n_philos, int exit_code);
 

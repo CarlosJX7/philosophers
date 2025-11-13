@@ -13,10 +13,28 @@
 #include "../header/philo_simulation.h"
 
 void ft_philos_finished_eaten(void);
-void ft_monitor_thread(void);
 void ft_philos_routine(void);
 void ft_start_philos_thread(void);
 
+
+void ft_monitor_thread(void *ptr)
+{
+	t_philo *philos;
+	int i;
+
+	philos = (t_philo *)ptr;
+	i = 0;
+	while (i < philos->total_philos)
+	{
+		if ()
+		{
+			/* code */
+		}
+		
+		i++;
+	}
+	
+}
 void ft_start_simulation_threads(t_simulation *sim)
 {
 	t_id monitor_id;
@@ -33,6 +51,5 @@ void ft_start_simulation_threads(t_simulation *sim)
 		i++;
 	}
 	i = 0;
-
 }
 
