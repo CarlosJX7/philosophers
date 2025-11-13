@@ -12,7 +12,7 @@
 
 #include "../header/philo_simulation.h"
 
-void ft_philos_routine(void);
+
 
 
 int ft_philos_full(t_philo *philos)
@@ -64,13 +64,49 @@ void ft_monitor_thread(void *ptr)
 	return ; //¿?
 }
 
+void ft_philos_routine(t_philo *philo)
+{
+	t_mutex *first_fork;
+	t_mutex *second_fork;
+
+	if (philo->philo_id == philo->total_philos)
+	{
+		first_fork = philo->mutexes.right_fork;
+		second_fork = philo->mutexes.right_fork;
+	}else
+	{
+		first_fork = philo->mutexes.left_fork;
+		second_fork = philo->mutexes.right_fork;
+	}
+	pthread_mutex_lock(first_fork);
+	ft_print_status(philo, "has taken a fork");
+	pthread_mutex_lock(second_fork);
+	ft_print_status(philo, "has taken a fork");
+	
+	pthread_mutex_lock(philo->mutexes.meal_lock);
+	ft_print_status(philo, "is eating");
+	philo->times.last_meal = ft_get_time();
+	philo->meals_eaten++;
+	pthread_mutex_unlock(philo->mutexes.meal_lock);
+
+	pthread_mutex_unlock(first_fork);
+	pthread_mutex_unlock(second_fork);
+	ft_print_status(philo, "is sleeping");
+	ft_usleep(philo->times.tto_sleep);
+
+}
+
 void ft_start_philo_thread(void *ptr)
 {
-	t_philo *philos;
+	t_philo *philo;
 
-	philos = (t_philo  *)ptr;
-
-
+	philo = (t_philo *)ptr;
+	philo->times.birth_time = ft_get_time();
+	pthread_mutex_lock(philo->mutexes.meal_lock);
+	philo->times.last_meal = ft_get_time();
+	pthread_mutex_unlock(philo->mutexes.meal_lock);
+	while (true)
+		ft_philos_routine(philo);
 }
 
 void ft_start_simulation_threads(t_simulation *sim)
@@ -84,10 +120,17 @@ void ft_start_simulation_threads(t_simulation *sim)
 	while (i < sim->philos->total_philos)
 	{
 		if (pthread_create(&sim->philos[i].thread_id, NULL,
-				&ft_start_philo_thread, sim->philos))
+				&ft_start_philo_thread, &sim->philos[i]) != 0)
 			ft_destroy_mutexes(sim, "Error al crear los hilos de los philos\n", sim->philos->total_philos, 1);
 		i++;
 	}
+	if (pthread_join(monitor_id, NULL) != 0)
+	ft_destroy_mutexes(sim, "Error al hacer join en la simulacion\n", sim->philos->total_philos, 1);
 	i = 0;
+	while (i < sim->philos->total_philos)
+	{
+		if (pthread_detach(sim->philos[i].thread_id))
+			ft_destroy_mutexes(sim, "Error en detach los philos\n", sim->philos->total_philos, 1);
+	}
 }
 

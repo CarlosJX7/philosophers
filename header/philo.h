@@ -16,6 +16,7 @@
 # include <stdbool.h>
 # include <pthread.h>
 # include <stdio.h>
+# include <unistd.h>
 
 # define PHILO_MAX_COUNT 200
 

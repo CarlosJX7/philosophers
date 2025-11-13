@@ -48,3 +48,12 @@ void ft_print_status(t_philo *philo, char *status)
 	pthread_mutex_lock(philo->mutexes.write_lock);
 	printf("[%ld] %d %s\n", time, philo->philo_id, status);
 }
+
+void ft_usleep(size_t time_ms)
+{
+	size_t start; 
+
+	start = ft_get_time();
+	while (ft_get_time() - start < time_ms)
+		usleep(500);
+}

@@ -15,6 +15,7 @@
 #include "../header/philo.h"
 #include "../header/initialization.h"
 #include "../header/utils.h"
+#include "../header/philo_simulation.h"
 
 
 //1. number_of_philosophers and forks
@@ -54,6 +55,7 @@ int main(int argc, char *argv)
 	ft_init_simulation(&sim, philos, forks);
 	ft_init_forks(&sim, ft_atoi(argv[1]));
 	ft_init_philosophers(&sim, philos, forks, argv);
-	
-	
+	ft_init_philosophers(&sim, philos, forks, argv);
+	ft_start_simulation_threads(&sim);
+	ft_destroy_mutexes(&sim, NULL, philos->total_philos, 0);
 }
