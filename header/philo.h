@@ -48,13 +48,13 @@ typedef struct s_times
 // Contiene su estado, tiempos, mutexes y estadísticas, permitiendo que cada hilo maneje su propio filósofo.
 typedef struct s_philo
 {
-    int	philosopher_id;        // Identificador único del filósofo (1 a PHILO_MAX_COUNT).
+    int	philo_id;        // Identificador único del filósofo (1 a PHILO_MAX_COUNT).
     t_times	times;               // Estructura con los tiempos del filósofo.
     t_mutexes mutexes;          // Estructura con los mutexes asociados.
     int meals_required;         // Número de comidas que debe consumir antes de terminar (opcional).
     t_id thread_id;             // ID del hilo que ejecuta este filósofo.
     int meals_eaten;            // Contador de comidas consumidas.
-    int total_philosophers;     // Número total de filósofos en la simulación.
+    int total_philos;     // Número total de filósofos en la simulación.
 }	t_philo;
 
 // Estructura central que coordina la simulación completa.
@@ -62,7 +62,7 @@ typedef struct s_philo
 typedef struct s_simulation
 {
     t_mutex *forks;             // Arreglo de mutexes representando los tenedores (uno por filósofo).
-    t_philo *philosophers;      // Arreglo de estructuras t_philo (uno por filósofo).
+    t_philo *philos;      // Arreglo de estructuras t_philo (uno por filósofo).
     t_mutex meal_lock;          // Mutex global para proteger operaciones de comidas.
     t_mutex write_lock;         // Mutex global para sincronizar la salida a consola.
 }	t_simulation;

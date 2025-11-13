@@ -18,7 +18,7 @@
 void ft_init_simulation(t_simulation *sim, t_philo *philos, t_mutex *forks)
 {
 	sim->forks = forks;
-	sim->philosophers = philos;
+	sim->philos = philos;
 	if (pthread_mutex_init(&sim->meal_lock, NULL) != 0
 	|| pthread_mutex_init(&sim->write_lock, NULL) != 0)
 	ft_destroy_mutexes(sim, "Error al iniciar mutexes globales\n", 0, 1);	
@@ -45,7 +45,7 @@ void ft_init_philosophers(t_simulation *sim, t_philo *philos, t_mutex *forks, ch
 	i = 0;
 	while (i < ft_atoi(argv[1]))
 	{
-		philos[i].philosopher_id = i;
+		philos[i].philo_id = i;
 		philos[i].times.time_to_die = ft_atoi(argv[2]);
 		philos[i].times.time_to_eat = ft_atoi(argv[3]);
 		philos[i].times.time_to_sleep = ft_atoi(argv[4]);
@@ -55,10 +55,10 @@ void ft_init_philosophers(t_simulation *sim, t_philo *philos, t_mutex *forks, ch
 		if (argv[5])
 			philos[i].meals_required = ft_atoi(argv[5]);
 		philos[i].meals_eaten = 0;
-		philos[i].total_philosophers = ft_atoi(argv[1]);
+		philos[i].total_philos = ft_atoi(argv[1]);
 		philos[i].mutexes.left_fork = &forks[i]; //left fork es un puntero al mutex del tenedor izquierdo
 		if (i == 0)
-			philos[i].mutexes.right_fork = &forks[philos[i].total_philosophers - 1];
+			philos[i].mutexes.right_fork = &forks[philos[i].total_philos - 1];
 		else
 			philos[i].mutexes.right_fork = &forks[i - 1];
 		philos[i].mutexes.write_lock = &sim->write_lock;

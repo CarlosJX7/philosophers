@@ -10,4 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef PHILO_SIMULATION_H
+# define PHILO_SIMULATION_H
 
+#include "../header/philo.h"
+#include "../header/aux.h"
+
+void ft_start_simulation_threads(t_simulation *sim);
+
+
+#endif
