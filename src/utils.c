@@ -12,6 +12,16 @@
 
 #include "../header/utils.h"
 
+int ft_strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return i;
+}
+
 int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t'
@@ -21,7 +31,7 @@ int	ft_isspace(char c)
 		return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
 	long	nbr;
 	long	sign;

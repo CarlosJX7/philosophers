@@ -49,8 +49,8 @@ void ft_init_philosophers(t_simulation *sim, t_philo *philos, t_mutex *forks, ch
 		philos[i].times.tto_starve = ft_atoi(argv[2]);
 		philos[i].times.tto_eat = ft_atoi(argv[3]);
 		philos[i].times.tto_sleep = ft_atoi(argv[4]);
-		philos[i].times.last_meal = get_current_time();
-		philos[i].times.birth_time = get_current_time();
+		philos[i].times.last_meal = ft_get_time();
+		philos[i].times.birth_time = ft_get_time();
 		philos[i].meals_required = -1;
 		if (argv[5])
 			philos[i].meals_required = ft_atoi(argv[5]);

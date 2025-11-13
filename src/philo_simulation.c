@@ -37,7 +37,7 @@ int ft_philos_full(t_philo *philos)
 	return (0);
 }
 
-void ft_monitor_thread(void *ptr)
+void *ft_monitor_thread(void *ptr)
 {
 	t_philo *philos;
 	int i;
@@ -53,15 +53,15 @@ void ft_monitor_thread(void *ptr)
 			{
 				pthread_mutex_unlock(philos[i].mutexes.meal_lock);
 				ft_print_status(&philos[i], "died");
-				return ;
+				return NULL;
 			}
 			pthread_mutex_unlock(philos[i].mutexes.meal_lock);
 			i++;
 		}
 		if (ft_philos_full(philos) == 1)
-			return ;
+			return NULL;
 	}
-	return ; //¿?
+	return NULL; //¿?
 }
 
 void ft_philos_routine(t_philo *philo)
@@ -96,10 +96,10 @@ void ft_philos_routine(t_philo *philo)
 
 }
 
-void ft_start_philo_thread(void *ptr)
+void *ft_start_philo_thread(void *ptr)
 {
 	t_philo *philo;
-
+	//sleep¿?
 	philo = (t_philo *)ptr;
 	philo->times.birth_time = ft_get_time();
 	pthread_mutex_lock(philo->mutexes.meal_lock);
@@ -133,4 +133,3 @@ void ft_start_simulation_threads(t_simulation *sim)
 			ft_destroy_mutexes(sim, "Error en detach los philos\n", sim->philos->total_philos, 1);
 	}
 }
-

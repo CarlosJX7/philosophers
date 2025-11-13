@@ -30,22 +30,22 @@ void ft_args_check(int argc, char **argv)
 
 	i = 0;
 	if (argc < 5 || argc > 6)
-		error_message("Cantiad de argumentos erronea\n");
+	ft_print_error("Error en la cantidad de args\n", 1);
 	while (i < argc)
 	{
 		num = ft_atoi(argv[i]);
 		if (i == 1 && (num < 1 || num > PHILO_MAX_COUNT)) 
-			error_message("Numero de filosofos fuera de rango\n");
-		else if (i == 5 && (num < 0) || num > INT_MAX)
-			error_message("Numero de comidas fuera de rango\n");
+			ft_print_error("Cantidad de philos fuera de rango\n", 1);
+		else if (i == 5 && (num < 0 || num > INT_MAX))
+			ft_print_error("Cantidad de comidas fuera de rango\n", 1);
 		else if (i > 1 && i < 5 && (num < 1 || num > INT_MAX))
-			error_message("Tiempos fuera de rango\n");
+			ft_print_error("Tiempo fuera de rango\n", 1);
 		i++;
 	}
 }
 
 
-int main(int argc, char *argv)
+int main(int argc, char **argv)
 {
 	t_philo philos[PHILO_MAX_COUNT];
 	t_mutex forks[PHILO_MAX_COUNT];

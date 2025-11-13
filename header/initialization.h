@@ -13,6 +13,8 @@
 #ifndef INITIALIZATION_H
 # define INITIALIZATION_H
 
+#include "philo.h"
+
 void ft_init_simulation(t_simulation *sim, t_philo *philos, t_mutex *forks);
 void ft_init_forks(t_simulation *sim, int n_philos);
 void ft_init_philosophers(t_simulation *sim, t_philo *philos, t_mutex *forks, char **argv);

@@ -15,6 +15,7 @@
 
 #include "../header/philo.h"
 
+int ft_strlen(char *s);
 int ft_atoi(char *str);
 
 #endif

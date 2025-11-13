@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../header/aux.h"
+#include "../header/utils.h"
 
 void ft_print_error(char *message, int exit_code)
 {
