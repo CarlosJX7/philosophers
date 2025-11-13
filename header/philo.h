@@ -15,6 +15,7 @@
 
 # include <stdbool.h>
 # include <pthread.h>
+# include <stdio.h>
 
 # define PHILO_MAX_COUNT 200
 
@@ -37,7 +38,7 @@ typedef struct s_mutexs
 // Incluye tiempos de espera, eventos y timestamps para gestionar el estado temporal y decidir acciones.
 typedef struct s_times
 {
-    size_t tto_die;       // Tiempo máximo sin comer antes de morir (en milisegundos).
+    size_t tto_starve;       // Tiempo máximo sin comer antes de morir (en milisegundos).
     size_t tto_eat;       // Duración de una sesión de comida.
     size_t tto_sleep;     // Duración de una sesión de sueño.
     size_t last_meal;    // Timestamp de la última comida para calcular riesgos.

@@ -31,11 +31,20 @@ void ft_destroy_mutexes(t_simulation *sim, char *message, int n_philos, int exit
 	ft_print_error(message, exit_code);
 }
 
-void ft_get_time(void)
+size_t ft_get_time(void)
 {
 	t_timeval	time;
 
 	if (gettimeofday(&time, NULL) == -1)
 		ft_print_error("Error en ft_get_time\n", 1);
 	return (time.tv_sec * 1000 + time.tv_usec / 1000);
+}
+
+void ft_print_status(t_philo *philo, char *status)
+{
+	size_t time;
+
+	time = ft_get_time() - philo->times.birth_time;
+	pthread_mutex_lock(philo->mutexes.write_lock);
+	printf("[%ld] %d %s\n", time, philo->philo_id, status);
 }
