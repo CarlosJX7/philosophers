@@ -26,14 +26,17 @@ int ft_philos_full(t_philo *philos)
 	philos_full = 0; 
 	while (i < philos->total_philos)
 	{
-		pthread_mutex_lock(philos->mutexes.meal_lock);
+		pthread_mutex_lock(philos[i].mutexes.meal_lock);
 		if (philos[i].meals_eaten >= philos->meals_required)
 			philos_full++;
-		pthread_mutex_unlock(philos->mutexes.meal_lock);
+		pthread_mutex_unlock(philos[i].mutexes.meal_lock);
 		i++;
 	}
 	if (philos_full == philos->total_philos)
+	{
+		pthread_mutex_lock(philos->mutexes.write_lock);	
 		return (1);
+	}
 	return (0);
 }
 
@@ -46,6 +49,7 @@ void *ft_monitor_thread(void *ptr)
 	i = 0;
 	while (true)
 	{
+		i = 0;
 		while (i < philos->total_philos)
 		{
 			pthread_mutex_lock(philos[i].mutexes.meal_lock);
@@ -53,6 +57,7 @@ void *ft_monitor_thread(void *ptr)
 			{
 				pthread_mutex_unlock(philos[i].mutexes.meal_lock);
 				ft_print_status(&philos[i], "died");
+				pthread_mutex_lock(philos->mutexes.write_lock);
 				return NULL;
 			}
 			pthread_mutex_unlock(philos[i].mutexes.meal_lock);
@@ -60,6 +65,7 @@ void *ft_monitor_thread(void *ptr)
 		}
 		if (ft_philos_full(philos) == 1)
 			return NULL;
+		usleep(100); // Reducir carga de CPU
 	}
 	return NULL; //¿?
 }
@@ -69,10 +75,21 @@ void ft_philos_routine(t_philo *philo)
 	t_mutex *first_fork;
 	t_mutex *second_fork;
 
+	if (philo->total_philos == 1)
+	{
+		pthread_mutex_lock(philo->mutexes.left_fork);
+		ft_print_status(philo, "has taken a fork");
+		pthread_mutex_unlock(philo->mutexes.left_fork);
+			while (true)
+				ft_usleep(1000);
+		return ;
+	}
+	
+
 	if (philo->philo_id == philo->total_philos)
 	{
 		first_fork = philo->mutexes.right_fork;
-		second_fork = philo->mutexes.right_fork;
+		second_fork = philo->mutexes.left_fork;
 	}else
 	{
 		first_fork = philo->mutexes.left_fork;
@@ -88,22 +105,27 @@ void ft_philos_routine(t_philo *philo)
 	philo->times.last_meal = ft_get_time();
 	philo->meals_eaten++;
 	pthread_mutex_unlock(philo->mutexes.meal_lock);
-
+	ft_usleep(philo->times.tto_eat);
 	pthread_mutex_unlock(first_fork);
 	pthread_mutex_unlock(second_fork);
 	ft_print_status(philo, "is sleeping");
 	ft_usleep(philo->times.tto_sleep);
+	ft_print_status(philo, "is thinking");
 
 }
 
 void *ft_start_philo_thread(void *ptr)
 {
 	t_philo *philo;
+	size_t current_time;
 	//sleep¿?
 	philo = (t_philo *)ptr;
-	philo->times.birth_time = ft_get_time();
+	if (philo->philo_id % 2 == 0)
+		ft_usleep(1);
+	current_time = ft_get_time();
+	philo->times.birth_time = current_time;
 	pthread_mutex_lock(philo->mutexes.meal_lock);
-	philo->times.last_meal = ft_get_time();
+	philo->times.last_meal = current_time;
 	pthread_mutex_unlock(philo->mutexes.meal_lock);
 	while (true)
 		ft_philos_routine(philo);
@@ -114,9 +136,9 @@ void ft_start_simulation_threads(t_simulation *sim)
 	t_id monitor_id;
 	int i;
 
-	i = 0;
 	if (pthread_create(&monitor_id, NULL, &ft_monitor_thread, sim->philos) != 0)
 		ft_destroy_mutexes(sim, "Error al crear el hilo monitor\n", sim->philos->total_philos, 1);
+	i = 0;
 	while (i < sim->philos->total_philos)
 	{
 		if (pthread_create(&sim->philos[i].thread_id, NULL,
@@ -131,5 +153,6 @@ void ft_start_simulation_threads(t_simulation *sim)
 	{
 		if (pthread_detach(sim->philos[i].thread_id))
 			ft_destroy_mutexes(sim, "Error en detach los philos\n", sim->philos->total_philos, 1);
+		i++;
 	}
 }

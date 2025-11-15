@@ -48,6 +48,7 @@ void ft_print_status(t_philo *philo, char *status)
 	time = ft_get_time() - philo->times.birth_time;
 	pthread_mutex_lock(philo->mutexes.write_lock);
 	printf("[%ld] %d %s\n", time, philo->philo_id, status);
+	pthread_mutex_unlock(philo->mutexes.write_lock);
 }
 
 void ft_usleep(size_t time_ms)

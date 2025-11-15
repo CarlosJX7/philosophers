@@ -45,7 +45,7 @@ void ft_init_philosophers(t_simulation *sim, t_philo *philos, t_mutex *forks, ch
 	i = 0;
 	while (i < ft_atoi(argv[1]))
 	{
-		philos[i].philo_id = i;
+		philos[i].philo_id = i + 1;
 		philos[i].times.tto_starve = ft_atoi(argv[2]);
 		philos[i].times.tto_eat = ft_atoi(argv[3]);
 		philos[i].times.tto_sleep = ft_atoi(argv[4]);

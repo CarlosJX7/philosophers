@@ -1,0 +1,11 @@
+Tests obligatorios específicos:
+
+Test 1 800 200 200: El filósofo no debe comer y debe morir​
+
+Test 5 800 200 200: Ningún filósofo debe morir​
+
+Test 5 800 200 200 7: Ningún filósofo debe morir y la simulación debe parar cuando todos hayan comido al menos 7 veces​
+
+Test 4 410 200 200: Ningún filósofo debe morir​
+
+Test 4 310 200 100: Un filósofo debe morir
