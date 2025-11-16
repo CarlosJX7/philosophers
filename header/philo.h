@@ -13,7 +13,7 @@
 #ifndef PHILO_H
 # define PHILO_H
 
-# include <stdbool.h>
+//# include <stdbool.h>
 # include <pthread.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -24,6 +24,7 @@
 typedef pthread_t		t_id;
 typedef pthread_mutex_t	t_mutex;
 typedef struct timeval	t_timeval;
+typedef enum { false, true } t_bool;
 
 // Estructura que agrupa los mutexes asociados a un filósofo individual.
 // Los mutexes controlan el acceso a recursos compartidos como tenedores y operaciones de escritura/comida,
@@ -34,6 +35,7 @@ typedef struct s_mutexs
     t_mutex *right_fork; // Puntero al mutex del tenedor derecho.
     t_mutex *write_lock; // Puntero al mutex global para sincronizar la escritura en consola.
     t_mutex *meal_lock;  // Puntero al mutex para proteger el conteo de comidas.
+    t_mutex *dead_lock;
 } t_mutexes;
 
 // Estructura que almacena los tiempos relacionados con el ciclo de vida de un filósofo.
@@ -58,6 +60,7 @@ typedef struct s_philo
     t_id thread_id;             // ID del hilo que ejecuta este filósofo.
     int meals_eaten;            // Contador de comidas consumidas.
     int total_philos;     // Número total de filósofos en la simulación.
+    t_bool *sim_stop_flag;
 }	t_philo;
 
 // Estructura central que coordina la simulación completa.
@@ -68,6 +71,8 @@ typedef struct s_simulation
     t_philo *philos;      // Arreglo de estructuras t_philo (uno por filósofo).
     t_mutex meal_lock;          // Mutex global para proteger operaciones de comidas.
     t_mutex write_lock;         // Mutex global para sincronizar la salida a consola.
+    t_mutex dead_lock;
+    t_bool sim_stop_flag;
 }	t_simulation;
 
 #endif

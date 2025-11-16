@@ -65,11 +65,21 @@ void ft_one_philo(t_philo *philo)
 	{
 		pthread_mutex_lock(philo->mutexes.left_fork);
 		ft_print_status(philo, "has taken a fork");
-		//pthread_mutex_unlock(philo->mutexes.left_fork);
-		//	while (true)
-		//		ft_usleep(1000);
-		ft_usleep(philo->times.tto_starve + 1);
+		// Esperar hasta que el monitor detecte muerte
+		while (!ft_check_death_flag(philo))
+			ft_usleep(1);
+		pthread_mutex_unlock(philo->mutexes.left_fork);
 		return ;
 	}
 	return ;
+}
+
+t_bool ft_check_death_flag(t_philo *philo)
+{
+    int result;
+
+    pthread_mutex_lock(philo->mutexes.dead_lock);
+    result = *philo->sim_stop_flag;  // O philo->sim->simulation_stopped
+    pthread_mutex_unlock(philo->mutexes.dead_lock);
+    return (result);
 }

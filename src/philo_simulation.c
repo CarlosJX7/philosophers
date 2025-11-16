@@ -6,24 +6,21 @@
 /*   By: cinaquiz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 12:41:08 by cinaquiz          #+#    #+#             */
-/*   Updated: 2025/11/12 12:41:10 by cinaquiz         ###   ########.fr       */
+/*   Updated: 2025/11/16 15:59:00 by cinaquiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/philo_simulation.h"
 
-
-
-
-int ft_philos_full(t_philo *philos)
+t_bool	ft_philos_full(t_philo *philos)
 {
-	int i;
-	int philos_full;
+	int	i;
+	int	philos_full;
 
 	if (philos->meals_required == -1)
-		return (0);
+		return (false);
 	i = 0;
-	philos_full = 0; 
+	philos_full = 0;
 	while (i < philos->total_philos)
 	{
 		pthread_mutex_lock(philos[i].mutexes.meal_lock);
@@ -33,17 +30,14 @@ int ft_philos_full(t_philo *philos)
 		i++;
 	}
 	if (philos_full == philos->total_philos)
-	{
-		pthread_mutex_lock(philos->mutexes.write_lock);	
-		return (1);
-	}
-	return (0);
+		return (true);
+	return (false);
 }
 
-void *ft_monitor_thread(void *ptr)
+void	*ft_monitor_thread(void *ptr)
 {
-	t_philo *philos;
-	int i;
+	t_philo	*philos;
+	int		i;
 
 	philos = (t_philo *)ptr;
 	i = 0;
@@ -53,109 +47,137 @@ void *ft_monitor_thread(void *ptr)
 		while (i < philos->total_philos)
 		{
 			pthread_mutex_lock(philos[i].mutexes.meal_lock);
-			if (ft_get_time() - philos[i].times.last_meal > philos[i].times.tto_starve)
+			if (ft_get_time() - philos[i].times.last_meal
+				> philos[i].times.tto_starve)
 			{
 				pthread_mutex_unlock(philos[i].mutexes.meal_lock);
 				ft_print_status(&philos[i], "died");
-				pthread_mutex_lock(philos->mutexes.write_lock);
-				return NULL;
+				pthread_mutex_lock(philos->mutexes.dead_lock);
+				*philos->sim_stop_flag = true;
+				pthread_mutex_unlock(philos->mutexes.dead_lock);
+				return (NULL);
 			}
 			pthread_mutex_unlock(philos[i].mutexes.meal_lock);
 			i++;
 		}
-		if (ft_philos_full(philos) == 1)
-			return NULL;
-		usleep(1000); // Reducir carga de CPU
+		if (ft_philos_full(philos) == true)
+		{
+			pthread_mutex_lock(philos->mutexes.dead_lock);
+			*philos->sim_stop_flag = true;
+			pthread_mutex_unlock(philos->mutexes.dead_lock);
+			return (NULL);
+		}
+		usleep(1000);
 	}
-	return NULL; //¿?
+	return (NULL);
 }
 
-void ft_philos_routine(t_philo *philo)
+void    ft_philos_routine(t_philo *philo)
 {
-	t_mutex *first_fork;
-	t_mutex *second_fork;
+    t_mutex *first_fork;
+    t_mutex *second_fork;
 
-	ft_one_philo(philo);
-		return ;
-	/*
-	{
-		pthread_mutex_lock(philo->mutexes.left_fork);
-		ft_print_status(philo, "has taken a fork");
-		pthread_mutex_unlock(philo->mutexes.left_fork);
-			while (true)
-				ft_usleep(1000);
-		return ;
-	}
-	*/
-	if (philo->philo_id == philo->total_philos)
-	{
-		first_fork = philo->mutexes.right_fork;
-		second_fork = philo->mutexes.left_fork;
-	}else
-	{
-		first_fork = philo->mutexes.left_fork;
-		second_fork = philo->mutexes.right_fork;
-	}
-	pthread_mutex_lock(first_fork);
-	ft_print_status(philo, "has taken a fork");
-	pthread_mutex_lock(second_fork);
-	ft_print_status(philo, "has taken a fork");
-	
-	ft_print_status(philo, "is eating");// fuera del mutex lock para mejor sincronizacion
-	pthread_mutex_lock(philo->mutexes.meal_lock);
-	philo->times.last_meal = ft_get_time();
-	philo->meals_eaten++;
-	pthread_mutex_unlock(philo->mutexes.meal_lock);
-	
-	
-	ft_usleep(philo->times.tto_eat);
-	pthread_mutex_unlock(second_fork);
-	pthread_mutex_unlock(first_fork);
-	ft_print_status(philo, "is sleeping");
-	ft_usleep(philo->times.tto_sleep);
-	ft_print_status(philo, "is thinking");
-
+    if (philo->total_philos == 1)
+    {
+        ft_one_philo(philo);
+        return ;
+    }
+    
+    if (philo->philo_id % 2 == 0)
+    {
+        first_fork = philo->mutexes.right_fork;
+        second_fork = philo->mutexes.left_fork;
+    }
+    else
+    {
+        first_fork = philo->mutexes.left_fork;
+        second_fork = philo->mutexes.right_fork;
+    }
+    
+    pthread_mutex_lock(first_fork);
+    ft_print_status(philo, "has taken a fork");
+    pthread_mutex_lock(second_fork);
+    ft_print_status(philo, "has taken a fork");
+    
+    pthread_mutex_lock(philo->mutexes.meal_lock);
+    philo->times.last_meal = ft_get_time();
+    philo->meals_eaten++;
+    pthread_mutex_unlock(philo->mutexes.meal_lock);
+    
+    ft_print_status(philo, "is eating");
+    ft_usleep(philo->times.tto_eat);
+    
+    pthread_mutex_unlock(second_fork);
+    pthread_mutex_unlock(first_fork);
+    
+    ft_print_status(philo, "is sleeping");
+    ft_usleep(philo->times.tto_sleep);
+    ft_print_status(philo, "is thinking");
+    
+    if (philo->total_philos % 2 != 0)
+        ft_usleep(philo->times.tto_eat / 2);  // ✅ ft_usleep, no usleep
 }
 
-void *ft_start_philo_thread(void *ptr)
+
+void	*ft_start_philo_thread(void *ptr)
 {
-	t_philo *philo;
-	size_t current_time;
-	//sleep¿?
+	t_philo	*philo;
+
 	philo = (t_philo *)ptr;
+	/* CAMBIO 4: Eliminado el busy-wait (while birth_time == 0)
+	 * Ya no es necesario porque timestamps se inicializan ANTES
+	 * de crear los threads (ver ft_start_simulation_threads) */
 	if (philo->philo_id % 2 == 0)
 		ft_usleep(1);
-	current_time = ft_get_time();
-	philo->times.birth_time = current_time;
-	pthread_mutex_lock(philo->mutexes.meal_lock);
-	philo->times.last_meal = current_time;
-	pthread_mutex_unlock(philo->mutexes.meal_lock);
-	while (true)
+	while (!ft_check_death_flag(philo))
 		ft_philos_routine(philo);
+	return (NULL);
 }
 
-void ft_start_simulation_threads(t_simulation *sim)
+void	ft_start_simulation_threads(t_simulation *sim)
 {
-	t_id monitor_id;
-	int i;
+	pthread_t	monitor_id;
+	int			i;
+	size_t		start_time;
 
-	if (pthread_create(&monitor_id, NULL, &ft_monitor_thread, sim->philos) != 0)
-		ft_destroy_mutexes(sim, "Error al crear el hilo monitor\n", sim->philos->total_philos, 1);
+	/* CAMBIO 5: Inicializar timestamps ANTES de crear threads
+	 * Esto previene race conditions y elimina necesidad de busy-wait
+	 * Todos los philos empiezan con el mismo timestamp inicial */
+	start_time = ft_get_time();
+	i = 0;
+	while (i < sim->philos->total_philos)
+	{
+		sim->philos[i].times.birth_time = start_time;
+		sim->philos[i].times.last_meal = start_time;
+		i++;
+	}
+	/* CAMBIO 6: Crear threads de filósofos DESPUÉS de inicializar timestamps
+	 * Orden correcto: init timestamps → crear philos → crear monitor */
 	i = 0;
 	while (i < sim->philos->total_philos)
 	{
 		if (pthread_create(&sim->philos[i].thread_id, NULL,
 				&ft_start_philo_thread, &sim->philos[i]) != 0)
-			ft_destroy_mutexes(sim, "Error al crear los hilos de los philos\n", sim->philos->total_philos, 1);
+			ft_destroy_mutexes(sim, "Error al crear los hilos de los philos\n",
+				sim->philos->total_philos, 1);
 		i++;
 	}
+	if (pthread_create(&monitor_id, NULL, &ft_monitor_thread, sim->philos) != 0)
+		ft_destroy_mutexes(sim, "Error al crear el hilo monitor\n",
+			sim->philos->total_philos, 1);
 	if (pthread_join(monitor_id, NULL) != 0)
-	ft_destroy_mutexes(sim, "Error al hacer join en la simulacion\n", sim->philos->total_philos, 1);
+		ft_destroy_mutexes(sim, "Error al hacer join en la simulacion\n",
+			sim->philos->total_philos, 1);
+	/* CAMBIO 7: pthread_join en lugar de pthread_detach
+	 * join ESPERA a que los threads terminen antes de continuar
+	 * detach solo los marca como independientes pero no espera
+	 * Necesitamos join para terminación controlada con el flag */
 	i = 0;
 	while (i < sim->philos->total_philos)
 	{
-		if (pthread_detach(sim->philos[i].thread_id))
-			ft_destroy_mutexes(sim, "Error en detach los philos\n", sim->philos->total_philos, 1);
+		if (pthread_join(sim->philos[i].thread_id, NULL) != 0)
+			ft_destroy_mutexes(sim, "Error en join los philos\n",
+				sim->philos->total_philos, 1);
 		i++;
 	}
 }

@@ -29,6 +29,7 @@ void ft_destroy_mutexes(t_simulation *sim, char *message, int n_philos, int exit
 	}
 	pthread_mutex_destroy(&sim->meal_lock);
 	pthread_mutex_destroy(&sim->write_lock);
+	pthread_mutex_destroy(&sim->dead_lock);
 	ft_print_error(message, exit_code);
 }
 
@@ -43,12 +44,26 @@ size_t ft_get_time(void)
 
 void ft_print_status(t_philo *philo, char *status)
 {
-	size_t time;
+    size_t time;
+    t_bool is_died;
 
-	time = ft_get_time() - philo->times.birth_time;
-	pthread_mutex_lock(philo->mutexes.write_lock);
-	printf("[%ld] %d %s\n", time, philo->philo_id, status);
-	pthread_mutex_unlock(philo->mutexes.write_lock);
+    // Comparar strings correctamente
+    is_died = (status[0] == 'd' && status[1] == 'i' && 
+               status[2] == 'e' && status[3] == 'd');
+    
+    // O usar strcmp:
+    // is_died = (strcmp(status, "died") == 0);
+    
+    pthread_mutex_lock(philo->mutexes.write_lock);
+    
+    // Imprimir SI: no ha parado O es el mensaje de muerte
+    if (!ft_check_death_flag(philo) || is_died)
+    {
+        time = ft_get_time() - philo->times.birth_time;
+        printf("[%ld] %d %s\n", time, philo->philo_id, status);
+    }
+    
+    pthread_mutex_unlock(philo->mutexes.write_lock);
 }
 
 void ft_usleep(size_t time_ms)

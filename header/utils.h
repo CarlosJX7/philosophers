@@ -19,5 +19,5 @@
 int ft_strlen(char *s);
 int ft_atoi(char *str);
 void ft_one_philo(t_philo *philo);
-
+t_bool ft_check_death_flag(t_philo *philo);
 #endif

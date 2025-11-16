@@ -57,4 +57,5 @@ int main(int argc, char **argv)
 	ft_init_philosophers(&sim, philos, forks, argv);
 	ft_start_simulation_threads(&sim);
 	ft_destroy_mutexes(&sim, NULL, philos[0].total_philos, 0);
+	return (0);
 }
