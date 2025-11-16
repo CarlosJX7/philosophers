@@ -83,15 +83,17 @@ void    ft_philos_routine(t_philo *philo)
         return ;
     }
     
-    if (philo->philo_id % 2 == 0)
-    {
-        first_fork = philo->mutexes.right_fork;
-        second_fork = philo->mutexes.left_fork;
-    }
-    else
+    // ✅ Ordenar por dirección de memoria para evitar deadlock
+    // Esta estrategia es más robusta que par/impar
+    if (philo->mutexes.left_fork < philo->mutexes.right_fork)
     {
         first_fork = philo->mutexes.left_fork;
         second_fork = philo->mutexes.right_fork;
+    }
+    else
+    {
+        first_fork = philo->mutexes.right_fork;
+        second_fork = philo->mutexes.left_fork;
     }
     
     pthread_mutex_lock(first_fork);
