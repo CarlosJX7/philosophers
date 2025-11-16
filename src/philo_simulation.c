@@ -116,8 +116,20 @@ void    ft_philos_routine(t_philo *philo)
     ft_usleep(philo->times.tto_sleep);
     ft_print_status(philo, "is thinking");
     
+    // ✅ Thinking time adaptativo para prevenir starvation
     if (philo->total_philos % 2 != 0)
-        ft_usleep(philo->times.tto_eat / 2);  // ✅ ft_usleep, no usleep
+    {
+        // Para números impares: thinking time = tto_eat / 2
+        ft_usleep(philo->times.tto_eat / 2);
+    }
+    else
+    {
+        // Para números pares con margen ajustado: thinking time mínimo
+        size_t margin = philo->times.tto_starve - 
+                       (philo->times.tto_eat + philo->times.tto_sleep);
+        if (margin < 50)  // Si margen < 50ms, añadir thinking time
+            usleep(1000);  // 1ms para reducir competencia
+    }
 }
 
 
