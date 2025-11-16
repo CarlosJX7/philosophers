@@ -1,0 +1,962 @@
+[0] 1 has taken a fork
+[0] 1 has taken a fork
+[0] 1 is eating
+[0] 3 has taken a fork
+[0] 3 has taken a fork
+[0] 3 is eating
+[0] 5 has taken a fork
+[200] 3 is sleeping
+[199] 2 has taken a fork
+[199] 2 has taken a fork
+[199] 2 is eating
+[200] 1 is sleeping
+[200] 5 has taken a fork
+[200] 5 is eating
+[399] 2 is sleeping
+[400] 5 is sleeping
+[399] 4 has taken a fork
+[399] 4 has taken a fork
+[399] 4 is eating
+[400] 3 is thinking
+[400] 1 is thinking
+[400] 1 has taken a fork
+[400] 1 has taken a fork
+[400] 1 is eating
+[600] 5 is thinking
+[600] 1 is sleeping
+[599] 2 is thinking
+[599] 2 has taken a fork
+[599] 2 has taken a fork
+[599] 2 is eating
+[599] 4 is sleeping
+[600] 5 has taken a fork
+[600] 5 has taken a fork
+[600] 5 is eating
+[600] 3 has taken a fork
+[800] 1 is thinking
+[800] 5 is sleeping
+[799] 2 is sleeping
+[800] 3 has taken a fork
+[800] 1 has taken a fork
+[800] 1 has taken a fork
+[800] 1 is eating
+[800] 3 is eating
+[799] 4 is thinking
+[799] 4 has taken a fork
+[999] 2 is thinking
+[999] 4 has taken a fork
+[999] 4 is eating
+[1000] 3 is sleeping
+[999] 2 has taken a fork
+[1000] 5 is thinking
+[1000] 1 is sleeping
+[999] 2 has taken a fork
+[999] 2 is eating
+[1199] 2 is sleeping
+[1199] 4 is sleeping
+[1200] 1 is thinking
+[1200] 1 has taken a fork
+[1200] 1 has taken a fork
+[1200] 1 is eating
+[1200] 5 has taken a fork
+[1200] 3 is thinking
+[1200] 3 has taken a fork
+[1200] 3 has taken a fork
+[1200] 3 is eating
+[1399] 2 is thinking
+[1399] 4 is thinking
+[1400] 1 is sleeping
+[1400] 3 is sleeping
+[1400] 5 has taken a fork
+[1400] 5 is eating
+[1399] 2 has taken a fork
+[1399] 2 has taken a fork
+[1399] 2 is eating
+[1599] 2 is sleeping
+[1600] 5 is sleeping
+[1599] 4 has taken a fork
+[1599] 4 has taken a fork
+[1599] 4 is eating
+[1600] 3 is thinking
+[1600] 1 is thinking
+[1600] 1 has taken a fork
+[1600] 1 has taken a fork
+[1600] 1 is eating
+[1799] 4 is sleeping
+[1800] 1 is sleeping
+[1799] 2 is thinking
+[1799] 2 has taken a fork
+[1799] 2 has taken a fork
+[1799] 2 is eating
+[1800] 3 has taken a fork
+[1800] 5 is thinking
+[1800] 5 has taken a fork
+[1800] 5 has taken a fork
+[1800] 5 is eating
+[1999] 4 is thinking
+[1999] 2 is sleeping
+[2000] 1 is thinking
+[2000] 1 has taken a fork
+[2000] 3 has taken a fork
+[2000] 3 is eating
+[2000] 5 is sleeping
+[1999] 4 has taken a fork
+[2000] 1 has taken a fork
+[2000] 1 is eating
+[2199] 2 is thinking
+[2200] 5 is thinking
+[2200] 1 is sleeping
+[2199] 4 has taken a fork
+[2199] 4 is eating
+[2200] 3 is sleeping
+[2199] 2 has taken a fork
+[2199] 2 has taken a fork
+[2199] 2 is eating
+[2399] 2 is sleeping
+[2400] 1 is thinking
+[2400] 1 has taken a fork
+[2400] 1 has taken a fork
+[2400] 1 is eating
+[2400] 3 is thinking
+[2399] 4 is sleeping
+[2400] 5 has taken a fork
+[2400] 3 has taken a fork
+[2400] 3 has taken a fork
+[2400] 3 is eating
+[2599] 2 is thinking
+[2600] 3 is sleeping
+[2600] 1 is sleeping
+[2599] 2 has taken a fork
+[2599] 2 has taken a fork
+[2599] 2 is eating
+[2600] 5 has taken a fork
+[2600] 5 is eating
+[2599] 4 is thinking
+[2800] 1 is thinking
+[2800] 5 is sleeping
+[2799] 4 has taken a fork
+[2799] 4 has taken a fork
+[2799] 4 is eating
+[2800] 3 is thinking
+[2799] 2 is sleeping
+[2800] 1 has taken a fork
+[2800] 1 has taken a fork
+[2800] 1 is eating
+[2999] 4 is sleeping
+[3000] 3 has taken a fork
+[3000] 3 has taken a fork
+[3000] 3 is eating
+[3000] 5 is thinking
+[3000] 5 has taken a fork
+[2999] 2 is thinking
+[3000] 1 is sleeping
+[3000] 5 has taken a fork
+[3000] 5 is eating
+[3200] 5 is sleeping
+[3199] 4 is thinking
+[3199] 4 has taken a fork
+[3200] 1 is thinking
+[3200] 1 has taken a fork
+[3200] 1 has taken a fork
+[3200] 1 is eating
+[3199] 4 has taken a fork
+[3199] 4 is eating
+[3200] 3 is sleeping
+[3199] 2 has taken a fork
+[3400] 5 is thinking
+[3400] 3 is thinking
+[3399] 4 is sleeping
+[3400] 3 has taken a fork
+[3400] 1 is sleeping
+[3400] 5 has taken a fork
+[3400] 5 has taken a fork
+[3400] 5 is eating
+[3399] 2 has taken a fork
+[3399] 2 is eating
+[3600] 5 is sleeping
+[3600] 1 is thinking
+[3599] 4 is thinking
+[3599] 4 has taken a fork
+[3600] 3 has taken a fork
+[3599] 2 is sleeping
+[3600] 3 is eating
+[3600] 1 has taken a fork
+[3600] 1 has taken a fork
+[3600] 1 is eating
+[3799] 2 is thinking
+[3800] 3 is sleeping
+[3799] 4 has taken a fork
+[3799] 4 is eating
+[0] 1 has taken a fork
+[0] 1 has taken a fork
+[0] 1 is eating
+[0] 3 has taken a fork
+[0] 3 has taken a fork
+[0] 3 is eating
+[0] 5 has taken a fork
+[200] 1 is sleeping
+[200] 5 has taken a fork
+[200] 5 is eating
+[200] 3 is sleeping
+[199] 2 has taken a fork
+[199] 2 has taken a fork
+[199] 2 is eating
+[400] 1 is thinking
+[400] 1 has taken a fork
+[399] 2 is sleeping
+[400] 3 is thinking
+[400] 3 has taken a fork
+[400] 3 has taken a fork
+[400] 3 is eating
+[400] 5 is sleeping
+[399] 4 has taken a fork
+[400] 1 has taken a fork
+[400] 1 is eating
+[600] 3 is sleeping
+[599] 2 is thinking
+[599] 2 has taken a fork
+[599] 4 has taken a fork
+[599] 4 is eating
+[600] 5 is thinking
+[600] 1 is sleeping
+[599] 2 has taken a fork
+[599] 2 is eating
+[800] 3 is thinking
+[799] 2 is sleeping
+[799] 4 is sleeping
+[800] 3 has taken a fork
+[800] 3 has taken a fork
+[800] 3 is eating
+[800] 1 is thinking
+[800] 5 has taken a fork
+[800] 5 has taken a fork
+[800] 5 is eating
+[800] 1 has taken a fork
+[999] 4 is thinking
+[999] 2 is thinking
+[1000] 5 is sleeping
+[1000] 1 has taken a fork
+[1000] 1 is eating
+[1000] 3 is sleeping
+[999] 4 has taken a fork
+[999] 4 has taken a fork
+[999] 4 is eating
+[999] 2 has taken a fork
+[1200] 3 is thinking
+[1199] 4 is sleeping
+[1200] 3 has taken a fork
+[1200] 5 is thinking
+[1200] 5 has taken a fork
+[1200] 1 is sleeping
+[1199] 2 has taken a fork
+[1199] 2 is eating
+[1200] 5 has taken a fork
+[1200] 5 is eating
+[1399] 4 is thinking
+[1400] 1 is thinking
+[1400] 5 is sleeping
+[1399] 4 has taken a fork
+[1399] 2 is sleeping
+[1400] 3 has taken a fork
+[1400] 3 is eating
+[1400] 1 has taken a fork
+[1400] 1 has taken a fork
+[1400] 1 is eating
+[1599] 2 is thinking
+[1600] 1 is sleeping
+[1600] 3 is sleeping
+[1599] 4 has taken a fork
+[1599] 4 is eating
+[1599] 2 has taken a fork
+[1599] 2 has taken a fork
+[1599] 2 is eating
+[1600] 5 is thinking
+[1800] 1 is thinking
+[1800] 3 is thinking
+[1799] 2 is sleeping
+[1800] 1 has taken a fork
+[1800] 1 has taken a fork
+[1800] 1 is eating
+[1799] 4 is sleeping
+[1800] 5 has taken a fork
+[1800] 3 has taken a fork
+[1800] 3 has taken a fork
+[1800] 3 is eating
+[2000] 1 is sleeping
+[2000] 5 has taken a fork
+[2000] 5 is eating
+[2000] 3 is sleeping
+[1999] 4 is thinking
+[1999] 2 is thinking
+[1999] 2 has taken a fork
+[1999] 2 has taken a fork
+[1999] 2 is eating
+[2200] 3 is thinking
+[2200] 3 has taken a fork
+[2200] 5 is sleeping
+[2199] 4 has taken a fork
+[2199] 2 is sleeping
+[2200] 3 has taken a fork
+[2200] 3 is eating
+[2200] 1 is thinking
+[2200] 1 has taken a fork
+[2200] 1 has taken a fork
+[2200] 1 is eating
+[2400] 5 is thinking
+[2399] 2 is thinking
+[2400] 1 is sleeping
+[2400] 3 is sleeping
+[2399] 2 has taken a fork
+[2399] 2 has taken a fork
+[2399] 2 is eating
+[2399] 4 has taken a fork
+[2399] 4 is eating
+[2600] 3 is thinking
+[2600] 1 is thinking
+[2599] 2 is sleeping
+[2600] 1 has taken a fork
+[2600] 1 has taken a fork
+[2600] 1 is eating
+[2599] 4 is sleeping
+[2600] 5 has taken a fork
+[2600] 3 has taken a fork
+[2600] 3 has taken a fork
+[2600] 3 is eating
+[2800] 3 is sleeping
+[2799] 2 is thinking
+[2799] 2 has taken a fork
+[2799] 4 is thinking
+[2799] 2 has taken a fork
+[2800] 1 is sleeping
+[2799] 2 is eating
+[2800] 5 has taken a fork
+[2800] 5 is eating
+[3000] 5 is sleeping
+[2999] 4 has taken a fork
+[2999] 4 has taken a fork
+[2999] 4 is eating
+[3000] 3 is thinking
+[2999] 2 is sleeping
+[3000] 1 is thinking
+[3000] 1 has taken a fork
+[3000] 1 has taken a fork
+[3000] 1 is eating
+[3199] 2 is thinking
+[3199] 2 has taken a fork
+[3200] 1 is sleeping
+[3199] 2 has taken a fork
+[3199] 2 is eating
+[3200] 5 is thinking
+[3200] 5 has taken a fork
+[3200] 5 has taken a fork
+[3200] 5 is eating
+[3199] 4 is sleeping
+[3200] 3 has taken a fork
+[3400] 1 is thinking
+[3399] 4 is thinking
+[3399] 2 is sleeping
+[3400] 3 has taken a fork
+[3400] 3 is eating
+[3400] 1 has taken a fork
+[3400] 5 is sleeping
+[3400] 1 has taken a fork
+[3400] 1 is eating
+[3399] 4 has taken a fork
+[3600] 5 is thinking
+[3599] 2 is thinking
+[3600] 1 is sleeping
+[3600] 3 is sleeping
+[3599] 4 has taken a fork
+[3599] 4 is eating
+[3599] 2 has taken a fork
+[3599] 2 has taken a fork
+[3599] 2 is eating
+[3800] 1 is thinking
+[3799] 4 is sleeping
+[3800] 5 has taken a fork
+[3800] 5 has taken a fork
+[3800] 5 is eating
+[3800] 3 is thinking
+[3800] 3 has taken a fork
+[3800] 3 has taken a fork
+[3800] 3 is eating
+[3799] 2 is sleeping
+[3800] 1 has taken a fork
+[4000] 3 is sleeping
+[3999] 2 is thinking
+[3999] 2 has taken a fork
+[3999] 4 is thinking
+[4000] 5 is sleeping
+[3999] 4 has taken a fork
+[3999] 4 has taken a fork
+[3999] 4 is eating
+[0] 1 has taken a fork
+[0] 1 has taken a fork
+[0] 1 is eating
+[0] 3 has taken a fork
+[0] 3 has taken a fork
+[0] 3 is eating
+[0] 5 has taken a fork
+[200] 3 is sleeping
+[200] 1 is sleeping
+[199] 5 has taken a fork
+[199] 5 is eating
+[199] 2 has taken a fork
+[199] 2 has taken a fork
+[199] 2 is eating
+[399] 2 is sleeping
+[399] 5 is sleeping
+[398] 4 has taken a fork
+[398] 4 has taken a fork
+[398] 4 is eating
+[400] 3 is thinking
+[400] 1 is thinking
+[400] 1 has taken a fork
+[400] 1 has taken a fork
+[400] 1 is eating
+[599] 2 is thinking
+[599] 2 has taken a fork
+[598] 4 is sleeping
+[600] 3 has taken a fork
+[600] 1 is sleeping
+[599] 2 has taken a fork
+[599] 2 is eating
+[599] 5 is thinking
+[599] 5 has taken a fork
+[599] 5 has taken a fork
+[599] 5 is eating
+[798] 4 is thinking
+[800] 1 is thinking
+[799] 2 is sleeping
+[800] 3 has taken a fork
+[800] 3 is eating
+[799] 5 is sleeping
+[800] 1 has taken a fork
+[800] 1 has taken a fork
+[800] 1 is eating
+[798] 4 has taken a fork
+[999] 2 is thinking
+[1000] 3 is sleeping
+[999] 2 has taken a fork
+[1000] 1 is sleeping
+[999] 5 is thinking
+[998] 4 has taken a fork
+[998] 4 is eating
+[999] 2 has taken a fork
+[999] 2 is eating
+[1198] 4 is sleeping
+[1199] 5 has taken a fork
+[1199] 5 has taken a fork
+[1199] 5 is eating
+[1200] 1 is thinking
+[1200] 3 is thinking
+[1200] 3 has taken a fork
+[1200] 3 has taken a fork
+[1200] 3 is eating
+[1199] 2 is sleeping
+[1200] 1 has taken a fork
+[1399] 5 is sleeping
+[1400] 1 has taken a fork
+[1400] 1 is eating
+[1398] 4 is thinking
+[1398] 4 has taken a fork
+[1399] 2 is thinking
+[1400] 3 is sleeping
+[1398] 4 has taken a fork
+[1398] 4 is eating
+[1399] 2 has taken a fork
+[1600] 3 is thinking
+[1599] 5 is thinking
+[1598] 4 is sleeping
+[1599] 5 has taken a fork
+[1600] 3 has taken a fork
+[1600] 1 is sleeping
+[1599] 5 has taken a fork
+[1599] 5 is eating
+[1599] 2 has taken a fork
+[1599] 2 is eating
+[1800] 1 is thinking
+[1799] 2 is sleeping
+[1800] 1 has taken a fork
+[1800] 3 has taken a fork
+[1800] 3 is eating
+[1799] 5 is sleeping
+[1798] 4 is thinking
+[1798] 4 has taken a fork
+[1800] 1 has taken a fork
+[1800] 1 is eating
+[2000] 1 is sleeping
+[1999] 5 is thinking
+[1999] 2 is thinking
+[1998] 4 has taken a fork
+[1998] 4 is eating
+[2000] 3 is sleeping
+[1999] 2 has taken a fork
+[1999] 2 has taken a fork
+[1999] 2 is eating
+[2199] 2 is sleeping
+[2200] 3 is thinking
+[2200] 1 is thinking
+[2200] 1 has taken a fork
+[2200] 1 has taken a fork
+[2200] 1 is eating
+[2198] 4 is sleeping
+[2199] 5 has taken a fork
+[2200] 3 has taken a fork
+[2200] 3 has taken a fork
+[2200] 3 is eating
+[2398] 4 is thinking
+[2400] 3 is sleeping
+[2400] 1 is sleeping
+[2399] 5 has taken a fork
+[2399] 5 is eating
+[2399] 2 is thinking
+[2399] 2 has taken a fork
+[2399] 2 has taken a fork
+[2399] 2 is eating
+[2599] 5 is sleeping
+[2598] 4 has taken a fork
+[2598] 4 has taken a fork
+[2598] 4 is eating
+[2600] 3 is thinking
+[2599] 2 is sleeping
+[2600] 1 is thinking
+[2600] 1 has taken a fork
+[2600] 1 has taken a fork
+[2600] 1 is eating
+[2798] 4 is sleeping
+[2800] 3 has taken a fork
+[2800] 3 has taken a fork
+[2800] 3 is eating
+[2799] 5 is thinking
+[2799] 5 has taken a fork
+[2799] 2 is thinking
+[2800] 1 is sleeping
+[2799] 5 has taken a fork
+[2799] 5 is eating
+[3000] 1 is thinking
+[3000] 1 has taken a fork
+[3000] 1 has taken a fork
+[3000] 1 is eating
+[2999] 5 is sleeping
+[2999] 2 has taken a fork
+[3000] 3 is sleeping
+[2998] 4 is thinking
+[2998] 4 has taken a fork
+[2998] 4 has taken a fork
+[2998] 4 is eating
+[3200] 3 is thinking
+[3200] 1 is sleeping
+[3199] 2 has taken a fork
+[3199] 2 is eating
+[3199] 5 is thinking
+[3199] 5 has taken a fork
+[3199] 5 has taken a fork
+[3199] 5 is eating
+[3198] 4 is sleeping
+[3200] 3 has taken a fork
+[3398] 4 is thinking
+[3398] 4 has taken a fork
+[3399] 5 is sleeping
+[3400] 1 is thinking
+[3400] 3 has taken a fork
+[3400] 3 is eating
+[3399] 2 is sleeping
+[3400] 1 has taken a fork
+[3400] 1 has taken a fork
+[3400] 1 is eating
+[3600] 3 is sleeping
+[3598] 4 has taken a fork
+[3598] 4 is eating
+[0] 1 has taken a fork
+[0] 1 has taken a fork
+[0] 1 is eating
+[0] 3 has taken a fork
+[0] 3 has taken a fork
+[0] 3 is eating
+[0] 5 has taken a fork
+[200] 1 is sleeping
+[199] 5 has taken a fork
+[199] 5 is eating
+[200] 3 is sleeping
+[199] 2 has taken a fork
+[199] 2 has taken a fork
+[199] 2 is eating
+[400] 3 is thinking
+[400] 3 has taken a fork
+[399] 5 is sleeping
+[400] 1 is thinking
+[398] 4 has taken a fork
+[399] 2 is sleeping
+[400] 3 has taken a fork
+[400] 3 is eating
+[400] 1 has taken a fork
+[400] 1 has taken a fork
+[400] 1 is eating
+[599] 5 is thinking
+[600] 3 is sleeping
+[598] 4 has taken a fork
+[598] 4 is eating
+[600] 1 is sleeping
+[599] 2 is thinking
+[599] 2 has taken a fork
+[599] 2 has taken a fork
+[599] 2 is eating
+[800] 1 is thinking
+[800] 3 is thinking
+[799] 2 is sleeping
+[800] 1 has taken a fork
+[800] 1 has taken a fork
+[800] 1 is eating
+[798] 4 is sleeping
+[799] 5 has taken a fork
+[800] 3 has taken a fork
+[800] 3 has taken a fork
+[800] 3 is eating
+[1000] 3 is sleeping
+[1000] 1 is sleeping
+[999] 5 has taken a fork
+[999] 5 is eating
+[998] 4 is thinking
+[999] 2 is thinking
+[999] 2 has taken a fork
+[999] 2 has taken a fork
+[999] 2 is eating
+[1200] 1 is thinking
+[1199] 2 is sleeping
+[1200] 3 is thinking
+[1200] 1 has taken a fork
+[1200] 3 has taken a fork
+[1200] 3 has taken a fork
+[1200] 3 is eating
+[1199] 5 is sleeping
+[1198] 4 has taken a fork
+[1200] 1 has taken a fork
+[1200] 1 is eating
+[1399] 2 is thinking
+[1400] 1 is sleeping
+[1399] 5 is thinking
+[1398] 4 has taken a fork
+[1398] 4 is eating
+[1400] 3 is sleeping
+[1399] 2 has taken a fork
+[1399] 2 has taken a fork
+[1399] 2 is eating
+[1600] 3 is thinking
+[1598] 4 is sleeping
+[1600] 3 has taken a fork
+[1599] 5 has taken a fork
+[1599] 5 has taken a fork
+[1599] 5 is eating
+[1600] 1 is thinking
+[1600] 3 has taken a fork
+[1600] 3 is eating
+[1599] 2 is sleeping
+[1600] 1 has taken a fork
+[1799] 5 is sleeping
+[1800] 1 has taken a fork
+[1800] 1 is eating
+[1800] 3 is sleeping
+[1799] 2 is thinking
+[1799] 2 has taken a fork
+[1798] 4 is thinking
+[1798] 4 has taken a fork
+[1798] 4 has taken a fork
+[1798] 4 is eating
+[1999] 5 is thinking
+[2000] 1 is sleeping
+[1999] 2 has taken a fork
+[1999] 2 is eating
+[1998] 4 is sleeping
+[1999] 5 has taken a fork
+[1999] 5 has taken a fork
+[1999] 5 is eating
+[2000] 3 is thinking
+[2000] 3 has taken a fork
+[2199] 5 is sleeping
+[2198] 4 is thinking
+[2198] 4 has taken a fork
+[2199] 2 is sleeping
+[2200] 3 has taken a fork
+[2200] 3 is eating
+[2200] 1 is thinking
+[2200] 1 has taken a fork
+[2200] 1 has taken a fork
+[2200] 1 is eating
+[2400] 1 is sleeping
+[2399] 5 is thinking
+[2399] 2 is thinking
+[2400] 3 is sleeping
+[2399] 2 has taken a fork
+[2399] 2 has taken a fork
+[2399] 2 is eating
+[2398] 4 has taken a fork
+[2398] 4 is eating
+[2599] 2 is sleeping
+[2600] 3 is thinking
+[2600] 1 is thinking
+[2600] 1 has taken a fork
+[2600] 1 has taken a fork
+[2600] 1 is eating
+[2598] 4 is sleeping
+[2600] 3 has taken a fork
+[2600] 3 has taken a fork
+[2600] 3 is eating
+[2599] 5 has taken a fork
+[2799] 2 is thinking
+[2798] 4 is thinking
+[2800] 3 is sleeping
+[2799] 2 has taken a fork
+[2799] 2 has taken a fork
+[2799] 2 is eating
+[2800] 1 is sleeping
+[2799] 5 has taken a fork
+[2799] 5 is eating
+[3000] 1 is thinking
+[3000] 3 is thinking
+[3000] 3 has taken a fork
+[2999] 2 is sleeping
+[3000] 3 has taken a fork
+[3000] 3 is eating
+[3000] 1 has taken a fork
+[2999] 5 is sleeping
+[3000] 1 has taken a fork
+[3000] 1 is eating
+[2998] 4 has taken a fork
+[3199] 5 is thinking
+[3200] 1 is sleeping
+[3199] 2 is thinking
+[3200] 3 is sleeping
+[3199] 2 has taken a fork
+[3199] 2 has taken a fork
+[3199] 2 is eating
+[3198] 4 has taken a fork
+[3198] 4 is eating
+[3399] 2 is sleeping
+[3398] 4 is sleeping
+[3400] 1 is thinking
+[3400] 1 has taken a fork
+[3400] 1 has taken a fork
+[3400] 1 is eating
+[3400] 3 is thinking
+[3399] 5 has taken a fork
+[3400] 3 has taken a fork
+[3400] 3 has taken a fork
+[3400] 3 is eating
+[3600] 3 is sleeping
+[3599] 2 is thinking
+[3599] 2 has taken a fork
+[3599] 2 has taken a fork
+[3599] 2 is eating
+[3600] 1 is sleeping
+[3599] 5 has taken a fork
+[3599] 5 is eating
+[3598] 4 is thinking
+[3799] 5 is sleeping
+[3800] 1 is thinking
+[3798] 4 has taken a fork
+[3798] 4 has taken a fork
+[3798] 4 is eating
+[3800] 3 is thinking
+[3799] 2 is sleeping
+[3800] 1 has taken a fork
+[3800] 1 has taken a fork
+[3800] 1 is eating
+[3999] 2 is thinking
+[3999] 2 has taken a fork
+[4000] 1 is sleeping
+[3999] 2 has taken a fork
+[3999] 2 is eating
+[3998] 4 is sleeping
+[4000] 3 has taken a fork
+[3999] 5 is thinking
+[3999] 5 has taken a fork
+[3999] 5 has taken a fork
+[3999] 5 is eating
+[4199] 5 is sleeping
+[4200] 1 is thinking
+[4199] 2 is sleeping
+[4200] 3 has taken a fork
+[4200] 3 is eating
+[4200] 1 has taken a fork
+[4200] 1 has taken a fork
+[4200] 1 is eating
+[4198] 4 is thinking
+[4198] 4 has taken a fork
+[4399] 5 is thinking
+[4400] 3 is sleeping
+[4398] 4 has taken a fork
+[4398] 4 is eating
+[0] 1 has taken a fork
+[0] 1 has taken a fork
+[0] 1 is eating
+[0] 3 has taken a fork
+[0] 3 has taken a fork
+[0] 3 is eating
+[0] 5 has taken a fork
+[200] 1 is sleeping
+[199] 5 has taken a fork
+[199] 5 is eating
+[200] 3 is sleeping
+[199] 2 has taken a fork
+[199] 2 has taken a fork
+[199] 2 is eating
+[400] 1 is thinking
+[399] 5 is sleeping
+[399] 2 is sleeping
+[399] 4 has taken a fork
+[399] 4 has taken a fork
+[399] 4 is eating
+[400] 3 is thinking
+[400] 1 has taken a fork
+[400] 1 has taken a fork
+[400] 1 is eating
+[600] 1 is sleeping
+[599] 2 is thinking
+[599] 2 has taken a fork
+[599] 2 has taken a fork
+[599] 2 is eating
+[599] 5 is thinking
+[599] 4 is sleeping
+[599] 5 has taken a fork
+[599] 5 has taken a fork
+[599] 5 is eating
+[600] 3 has taken a fork
+[799] 4 is thinking
+[800] 1 is thinking
+[799] 5 is sleeping
+[799] 2 is sleeping
+[800] 1 has taken a fork
+[800] 1 has taken a fork
+[800] 1 is eating
+[799] 4 has taken a fork
+[800] 3 has taken a fork
+[800] 3 is eating
+[999] 5 is thinking
+[999] 2 is thinking
+[1000] 1 is sleeping
+[999] 4 has taken a fork
+[999] 4 is eating
+[1000] 3 is sleeping
+[999] 2 has taken a fork
+[999] 2 has taken a fork
+[999] 2 is eating
+[1199] 4 is sleeping
+[1199] 5 has taken a fork
+[1199] 5 has taken a fork
+[1199] 5 is eating
+[1200] 1 is thinking
+[1200] 3 is thinking
+[1200] 3 has taken a fork
+[1200] 3 has taken a fork
+[1200] 3 is eating
+[1199] 2 is sleeping
+[1200] 1 has taken a fork
+[1399] 2 is thinking
+[1400] 3 is sleeping
+[1399] 5 is sleeping
+[1399] 4 is thinking
+[1399] 4 has taken a fork
+[1399] 4 has taken a fork
+[1399] 4 is eating
+[1399] 2 has taken a fork
+[1400] 1 has taken a fork
+[1400] 1 is eating
+[1599] 4 is sleeping
+[1600] 3 is thinking
+[1600] 3 has taken a fork
+[1599] 5 is thinking
+[1600] 1 is sleeping
+[1599] 5 has taken a fork
+[1599] 5 has taken a fork
+[1599] 5 is eating
+[1599] 2 has taken a fork
+[1599] 2 is eating
+[1799] 5 is sleeping
+[1800] 1 is thinking
+[1799] 4 is thinking
+[1799] 4 has taken a fork
+[1799] 2 is sleeping
+[1800] 3 has taken a fork
+[1800] 3 is eating
+[1800] 1 has taken a fork
+[1800] 1 has taken a fork
+[1800] 1 is eating
+[1999] 2 is thinking
+[2000] 1 is sleeping
+[2000] 3 is sleeping
+[1999] 5 is thinking
+[1999] 2 has taken a fork
+[1999] 2 has taken a fork
+[1999] 2 is eating
+[1999] 4 has taken a fork
+[1999] 4 is eating
+[2199] 4 is sleeping
+[2199] 5 has taken a fork
+[2199] 5 has taken a fork
+[2199] 5 is eating
+[2200] 3 is thinking
+[2200] 3 has taken a fork
+[2200] 1 is thinking
+[2199] 2 is sleeping
+[2200] 3 has taken a fork
+[2200] 3 is eating
+[2200] 1 has taken a fork
+[2399] 2 is thinking
+[2399] 5 is sleeping
+[2399] 4 is thinking
+[2399] 4 has taken a fork
+[2400] 1 has taken a fork
+[2400] 1 is eating
+[2400] 3 is sleeping
+[2399] 2 has taken a fork
+[2399] 4 has taken a fork
+[2399] 4 is eating
+[2599] 5 is thinking
+[2600] 1 is sleeping
+[2599] 4 is sleeping
+[2599] 5 has taken a fork
+[2599] 5 has taken a fork
+[2599] 5 is eating
+[2599] 2 has taken a fork
+[2599] 2 is eating
+[2600] 3 is thinking
+[2600] 3 has taken a fork
+[2800] 1 is thinking
+[2799] 4 is thinking
+[2800] 3 has taken a fork
+[2800] 3 is eating
+[2799] 2 is sleeping
+[2800] 1 has taken a fork
+[2799] 4 has taken a fork
+[2799] 5 is sleeping
+[2800] 1 has taken a fork
+[2800] 1 is eating
+[2999] 5 is thinking
+[3000] 3 is sleeping
+[2999] 4 has taken a fork
+[2999] 4 is eating
+[2999] 2 is thinking
+[2999] 2 has taken a fork
+[3000] 1 is sleeping
+[2999] 2 has taken a fork
+[2999] 2 is eating
+[3200] 3 is thinking
+[3199] 4 is sleeping
+[3199] 5 has taken a fork
+[3199] 5 has taken a fork
+[3199] 5 is eating
+[3200] 3 has taken a fork
+[3199] 2 is sleeping
+[3200] 3 has taken a fork
+[3200] 3 is eating
+[3200] 1 is thinking
+[3200] 1 has taken a fork
+[3399] 5 is sleeping
+[3400] 1 has taken a fork
+[3400] 1 is eating
+[3400] 3 is sleeping
+[3399] 4 is thinking
+[3399] 4 has taken a fork
+[3399] 4 has taken a fork
+[3399] 4 is eating

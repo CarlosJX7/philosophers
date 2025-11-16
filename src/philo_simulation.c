@@ -65,7 +65,7 @@ void *ft_monitor_thread(void *ptr)
 		}
 		if (ft_philos_full(philos) == 1)
 			return NULL;
-		usleep(100); // Reducir carga de CPU
+		usleep(1000); // Reducir carga de CPU
 	}
 	return NULL; //¿?
 }
@@ -75,7 +75,9 @@ void ft_philos_routine(t_philo *philo)
 	t_mutex *first_fork;
 	t_mutex *second_fork;
 
-	if (philo->total_philos == 1)
+	ft_one_philo(philo);
+		return ;
+	/*
 	{
 		pthread_mutex_lock(philo->mutexes.left_fork);
 		ft_print_status(philo, "has taken a fork");
@@ -84,8 +86,7 @@ void ft_philos_routine(t_philo *philo)
 				ft_usleep(1000);
 		return ;
 	}
-	
-
+	*/
 	if (philo->philo_id == philo->total_philos)
 	{
 		first_fork = philo->mutexes.right_fork;
@@ -100,14 +101,16 @@ void ft_philos_routine(t_philo *philo)
 	pthread_mutex_lock(second_fork);
 	ft_print_status(philo, "has taken a fork");
 	
+	ft_print_status(philo, "is eating");// fuera del mutex lock para mejor sincronizacion
 	pthread_mutex_lock(philo->mutexes.meal_lock);
-	ft_print_status(philo, "is eating");
 	philo->times.last_meal = ft_get_time();
 	philo->meals_eaten++;
 	pthread_mutex_unlock(philo->mutexes.meal_lock);
+	
+	
 	ft_usleep(philo->times.tto_eat);
-	pthread_mutex_unlock(first_fork);
 	pthread_mutex_unlock(second_fork);
+	pthread_mutex_unlock(first_fork);
 	ft_print_status(philo, "is sleeping");
 	ft_usleep(philo->times.tto_sleep);
 	ft_print_status(philo, "is thinking");

@@ -15,6 +15,7 @@
 
 #include "../header/philo.h"
 #include "../header/aux.h"
+#include "../header/utils.h"
 
 void ft_start_simulation_threads(t_simulation *sim);
 

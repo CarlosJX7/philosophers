@@ -28,7 +28,7 @@ void ft_args_check(int argc, char **argv)
 	int  i;
 	long num;
 
-	i = 0;
+	i = 1;
 	if (argc < 5 || argc > 6)
 	ft_print_error("Error en la cantidad de args\n", 1);
 	while (i < argc)
@@ -55,7 +55,6 @@ int main(int argc, char **argv)
 	ft_init_simulation(&sim, philos, forks);
 	ft_init_forks(&sim, ft_atoi(argv[1]));
 	ft_init_philosophers(&sim, philos, forks, argv);
-	ft_init_philosophers(&sim, philos, forks, argv);
 	ft_start_simulation_threads(&sim);
-	ft_destroy_mutexes(&sim, NULL, philos->total_philos, 0);
+	ft_destroy_mutexes(&sim, NULL, philos[0].total_philos, 0);
 }

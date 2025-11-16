@@ -13,9 +13,11 @@
 #ifndef UTILS_H
 # define UTILS_H
 
+#include "../header/aux.h"
 #include "../header/philo.h"
 
 int ft_strlen(char *s);
 int ft_atoi(char *str);
+void ft_one_philo(t_philo *philo);
 
 #endif

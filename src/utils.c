@@ -57,3 +57,19 @@ int	ft_atoi(char *str)
 	}
 	return (sign * nbr);
 }
+
+
+void ft_one_philo(t_philo *philo)
+{
+	if (philo->total_philos == 1)
+	{
+		pthread_mutex_lock(philo->mutexes.left_fork);
+		ft_print_status(philo, "has taken a fork");
+		//pthread_mutex_unlock(philo->mutexes.left_fork);
+		//	while (true)
+		//		ft_usleep(1000);
+		ft_usleep(philo->times.tto_starve + 1);
+		return ;
+	}
+	return ;
+}

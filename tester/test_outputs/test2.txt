@@ -1,0 +1,46 @@
+[0] 1 has taken a fork
+[0] 1 has taken a fork
+[0] 1 is eating
+[0] 3 has taken a fork
+[0] 3 has taken a fork
+[0] 3 is eating
+[0] 5 has taken a fork
+[200] 3 is sleeping
+[199] 2 has taken a fork
+[199] 2 has taken a fork
+[199] 2 is eating
+[200] 1 is sleeping
+[200] 5 has taken a fork
+[200] 5 is eating
+[400] 3 is thinking
+[400] 3 has taken a fork
+[400] 5 is sleeping
+[399] 4 has taken a fork
+[400] 1 is thinking
+[400] 3 has taken a fork
+[400] 3 is eating
+[399] 2 is sleeping
+[400] 1 has taken a fork
+[400] 1 has taken a fork
+[400] 1 is eating
+[600] 5 is thinking
+[600] 3 is sleeping
+[599] 2 is thinking
+[599] 2 has taken a fork
+[599] 4 has taken a fork
+[599] 4 is eating
+[600] 1 is sleeping
+[599] 2 has taken a fork
+[599] 2 is eating
+[799] 2 is sleeping
+[799] 4 is sleeping
+[800] 3 is thinking
+[800] 3 has taken a fork
+[800] 3 has taken a fork
+[800] 3 is eating
+[800] 5 has taken a fork
+[800] 5 has taken a fork
+[800] 5 is eating
+[800] 1 is thinking
+[800] 1 has taken a fork
+[2347] 1 died
