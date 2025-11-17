@@ -17,7 +17,7 @@
 #include <sys/time.h>
 
 void ft_print_error(char *message, int exit_code);
-void ft_destroy_mutexes(t_simulation *sim, char *message, int n_philos, int exit_code);
+void ft_destroy_mutexes(t_simul *sim, char *message, int n_philos, int exit_code);
 size_t ft_get_time(void);
 void ft_print_status(t_philo *philo, char *status);
 void ft_usleep(size_t time_ms);

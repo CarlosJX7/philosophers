@@ -73,6 +73,6 @@ typedef struct s_simulation
     t_mutex write_lock;         // Mutex global para sincronizar la salida a consola.
     t_mutex dead_lock;
     t_bool sim_stop_flag;
-}	t_simulation;
+}	t_simul;
 
 #endif

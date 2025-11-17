@@ -15,50 +15,47 @@
 #include "../header/utils.h"
 #include "../header/aux.h"
 
-void ft_init_simulation(t_simulation *sim, t_philo *philos, t_mutex *forks)
+void	ft_init_simulation(t_simul *sim, t_philo *philos, t_mutex *forks)
 {
 	sim->forks = forks;
 	sim->philos = philos;
 	sim->sim_stop_flag = false;
 	if (pthread_mutex_init(&sim->meal_lock, NULL) != 0
-	|| pthread_mutex_init(&sim->write_lock, NULL) != 0
-	|| pthread_mutex_init(&sim->dead_lock, NULL) != 0)
-		ft_destroy_mutexes(sim, "Error al iniciar mutexes globales\n", 0, 1);	
+		|| pthread_mutex_init(&sim->write_lock, NULL) != 0
+		|| pthread_mutex_init(&sim->dead_lock, NULL) != 0)
+		ft_destroy_mutexes(sim, "Error al iniciar mutexes globales\n", 0, 1);
 }
 
-void ft_init_forks(t_simulation *sim, int n_philos)
+void	ft_init_forks(t_simul *sim, int n_philos)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	while (i < n_philos)
 	{
-		if (pthread_mutex_init(&sim->forks[i], NULL) != 0) // necesario & porque pasamos los forks de forma unitaria
-			ft_destroy_mutexes(sim, "Errior al iniciar mutexes de tenedores\n", i, 1);
-		i++;	
+		if (pthread_mutex_init(&sim->forks[i], NULL) != 0)
+			ft_destroy_mutexes(sim, "Error al iniciar mutexes\n", i, 1);
+		i++;
 	}
 }
 
-void ft_init_philosophers(t_simulation *sim, t_philo *philos, t_mutex *forks, char **argv)
+void	ft_init_philos(t_simul *sim, t_philo *philos, t_mutex *forks, char **av)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (i < ft_atoi(argv[1]))
+	while (i < ft_atoi(av[1]))
 	{
 		philos[i].philo_id = i + 1;
-		philos[i].times.tto_starve = ft_atoi(argv[2]);
-		philos[i].times.tto_eat = ft_atoi(argv[3]);
-		philos[i].times.tto_sleep = ft_atoi(argv[4]);
-		//philos[i].times.last_meal = ft_get_time();
-		//philos[i].times.birth_time = ft_get_time();
+		philos[i].times.tto_starve = ft_atoi(av[2]);
+		philos[i].times.tto_eat = ft_atoi(av[3]);
+		philos[i].times.tto_sleep = ft_atoi(av[4]);
 		philos[i].meals_required = -1;
-		if (argv[5])
-			philos[i].meals_required = ft_atoi(argv[5]);
+		if (av[5])
+			philos[i].meals_required = ft_atoi(av[5]);
 		philos[i].meals_eaten = 0;
-		philos[i].total_philos = ft_atoi(argv[1]);
-		philos[i].mutexes.left_fork = &forks[i]; //left fork es un puntero al mutex del tenedor izquierdo
+		philos[i].total_philos = ft_atoi(av[1]);
+		philos[i].mutexes.left_fork = &forks[i];
 		if (i == 0)
 			philos[i].mutexes.right_fork = &forks[philos[i].total_philos - 1];
 		else

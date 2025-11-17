@@ -15,9 +15,9 @@
 
 #include "philo.h"
 
-void ft_init_simulation(t_simulation *sim, t_philo *philos, t_mutex *forks);
-void ft_init_forks(t_simulation *sim, int n_philos);
-void ft_init_philosophers(t_simulation *sim, t_philo *philos, t_mutex *forks, char **argv);
+void ft_init_simulation(t_simul *sim, t_philo *philos, t_mutex *forks);
+void ft_init_forks(t_simul *sim, int n_philos);
+void ft_init_philos(t_simul *sim, t_philo *philos, t_mutex *forks, char **argv);
 
 
 # endif

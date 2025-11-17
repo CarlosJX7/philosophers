@@ -26,7 +26,8 @@ SRC_FILES	= main.c \
 			  aux.c \
 			  initialization.c \
 			  philo_simulation.c \
-			  utils.c
+			  utils.c \
+			  simulation_aux.c
 
 # Object files
 SRCS		= $(addprefix $(SRC_DIR)/, $(SRC_FILES))
@@ -37,7 +38,8 @@ HEADERS		= $(HEADER_DIR)/philo.h \
 			  $(HEADER_DIR)/aux.h \
 			  $(HEADER_DIR)/initialization.h \
 			  $(HEADER_DIR)/philo_simulation.h \
-			  $(HEADER_DIR)/utils.h
+			  $(HEADER_DIR)/utils.h \
+			  $(HEADER_DIR)/simulation_aux.h
 
 # Colors
 GREEN		= \033[0;32m

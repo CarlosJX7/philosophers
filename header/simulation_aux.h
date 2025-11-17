@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philo_simulation.h                                 :+:      :+:    :+:   */
+/*   simulation_aux.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cinaquiz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 12:40:59 by cinaquiz          #+#    #+#             */
-/*   Updated: 2025/11/12 12:41:00 by cinaquiz         ###   ########.fr       */
+/*   Created: 2025/11/17 12:47:52 by cinaquiz          #+#    #+#             */
+/*   Updated: 2025/11/17 12:47:54 by cinaquiz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILO_SIMULATION_H
-# define PHILO_SIMULATION_H
 
-#include "../header/philo.h"
-#include "../header/aux.h"
-#include "../header/utils.h"
+#include "philo.h"
 
-void ft_start_simulation_threads(t_simul *sim);
-
-
-#endif
+void ft_join_threads(pthread_t monitor_id, t_simul *sim);
+void ft_thinking_time(t_philo *philo);
+void ft_eat_sleep_think(t_philo *philo, t_mutex *first_fork, t_mutex *second_fork);
