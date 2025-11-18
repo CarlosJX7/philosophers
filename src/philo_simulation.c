@@ -35,32 +35,15 @@ t_bool	ft_philos_full(t_philo *philos)
 	return (false);
 }
 
-void	*ft_monitor_thread(void *ptr) // 34 lineas
+void	*ft_monitor_thread(void *ptr)
 {
 	t_philo	*philos;
-	int		i;
 
 	philos = (t_philo *)ptr;
-	i = 0;
 	while (true)
 	{
-		i = 0;
-		while (i < philos->total_philos)
-		{
-			pthread_mutex_lock(philos[i].mutexes.meal_lock);
-			if (ft_get_time() - philos[i].times.last_meal
-				> philos[i].times.tto_starve)
-			{
-				pthread_mutex_unlock(philos[i].mutexes.meal_lock);
-				ft_print_status(&philos[i], "died");
-				pthread_mutex_lock(philos->mutexes.dead_lock);
-				*philos->sim_stop_flag = true;
-				pthread_mutex_unlock(philos->mutexes.dead_lock);
-				return (NULL);
-			}
-			pthread_mutex_unlock(philos[i].mutexes.meal_lock);
-			i++;
-		} //probar con este while
+		if (ft_starving_check(philos))
+			return (NULL);
 		if (ft_philos_full(philos) == true)
 		{
 			pthread_mutex_lock(philos->mutexes.dead_lock);
@@ -73,10 +56,10 @@ void	*ft_monitor_thread(void *ptr) // 34 lineas
 	return (NULL);
 }
 
-void    ft_philos_routine(t_philo *philo)
+void	ft_philos_routine(t_philo *philo)
 {
-	t_mutex *first_fork;
-	t_mutex *second_fork;
+	t_mutex	*first_fork;
+	t_mutex	*second_fork;
 
 	if (philo->total_philos == 1)
 	{
@@ -95,7 +78,6 @@ void    ft_philos_routine(t_philo *philo)
 	}
 	ft_eat_sleep_think(philo, first_fork, second_fork);
 }
-
 
 void	*ft_start_philo_thread(void *ptr)
 {

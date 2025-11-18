@@ -12,14 +12,14 @@
 
 #include "../header/utils.h"
 
-int ft_strlen(char *s)
+int	ft_strlen(char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i])
 		i++;
-	return i;
+	return (i);
 }
 
 int	ft_isspace(char c)
@@ -58,8 +58,7 @@ int	ft_atoi(char *str)
 	return (sign * nbr);
 }
 
-
-void ft_one_philo(t_philo *philo)
+void	ft_one_philo(t_philo *philo)
 {
 	if (philo->total_philos == 1)
 	{
@@ -74,12 +73,12 @@ void ft_one_philo(t_philo *philo)
 	return ;
 }
 
-t_bool ft_check_death_flag(t_philo *philo)
+t_bool	ft_check_death_flag(t_philo *philo)
 {
-    int result;
+	int	result;
 
-    pthread_mutex_lock(philo->mutexes.dead_lock);
-    result = *philo->sim_stop_flag;  // O philo->sim->simulation_stopped
-    pthread_mutex_unlock(philo->mutexes.dead_lock);
-    return (result);
+	pthread_mutex_lock(philo->mutexes.dead_lock);
+	result = *philo->sim_stop_flag;// O philo->sim->simulation_stopped
+	pthread_mutex_unlock(philo->mutexes.dead_lock);
+	return (result);
 }
