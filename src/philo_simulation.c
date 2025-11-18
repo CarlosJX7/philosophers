@@ -85,7 +85,7 @@ void	*ft_start_philo_thread(void *ptr)
 
 	philo = (t_philo *)ptr;
 	if (philo->philo_id % 2 == 0)
-		ft_usleep(1);
+		ft_sleep_ms(1);
 	while (!ft_check_death_flag(philo))
 		ft_philos_routine(philo);
 	return (NULL);

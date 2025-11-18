@@ -58,7 +58,7 @@ void	ft_print_status(t_philo *philo, char *status)
 	pthread_mutex_unlock(philo->mutexes.write_lock);
 }
 
-void	ft_usleep(size_t time_ms)
+void	ft_sleep_ms(size_t time_ms)
 {
 	size_t	start;
 

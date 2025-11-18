@@ -66,7 +66,7 @@ void	ft_one_philo(t_philo *philo)
 		ft_print_status(philo, "has taken a fork");
 		// Esperar hasta que el monitor detecte muerte
 		while (!ft_check_death_flag(philo))
-			ft_usleep(1);
+			ft_sleep_ms(1);
 		pthread_mutex_unlock(philo->mutexes.left_fork);
 		return ;
 	}

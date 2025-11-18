@@ -38,7 +38,7 @@ void	ft_thinking_time(t_philo *philo) // falta personalizar
 	if (philo->total_philos % 2 != 0)
 	{
 		// Para números impares: thinking time = tto_eat / 2
-		ft_usleep(philo->times.tto_eat / 2);
+		ft_sleep_ms(philo->times.tto_eat / 2);
 	}
 	else
 	{
@@ -61,11 +61,11 @@ void	ft_eat_sleep_think(t_philo *philo, t_mutex *st_fork, t_mutex *nd_fork)
 	philo->meals_eaten++;
 	pthread_mutex_unlock(philo->mutexes.meal_lock);
 	ft_print_status(philo, "is eating");
-	ft_usleep(philo->times.tto_eat);
+	ft_sleep_ms(philo->times.tto_eat);
 	pthread_mutex_unlock(nd_fork);
 	pthread_mutex_unlock(st_fork);
 	ft_print_status(philo, "is sleeping");
-	ft_usleep(philo->times.tto_sleep);
+	ft_sleep_ms(philo->times.tto_sleep);
 	ft_print_status(philo, "is thinking");
 	ft_thinking_time(philo);
 }
